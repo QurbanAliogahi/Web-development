@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		h1{
+			text-align: center;
+			padding: 10px;
+			background-color: aqua;
+			margin-right: 50px;
+			margin-left: 50px;
+		}
+		.userData {
+			margin: 0 auto;
+		}
+		
+		nav {
+			padding: 10px;
+			background-color: blue;
+			align-content: center;
+		}
+		nav li {
+			display: inline-block;
+			padding: 4px;
+			background-color: white;
+			text-decoration: none;
+
+		}
+		nav li:hover {
+			background-color: black;
+			text-transform: capitalize;
+			text-decoration: none;
+			color: white;
+		}
+		.Menu{
+			display: none;
+		}
+		Home >ul:hover {
+			display: table;
+
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="mainMenu">
+			<ul> 
+				<li>
+					Home
+					<ul class="Menu">
+						<li><a href="GPA Calcultor 21SW 2.html" target="_blank">GPA Calculator</a> </li>
+				<li> <a href="markseet.html" target="_blank">Percentage Calculator</a></li>
+				<li><a href="markseet2.html" target="_blank">Marks Sheet Generaotr</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</nav>
+	<h1>
+		Marks Sheet Generaotr
+	</h1>
+	<table class="userData">
+		<tr>
+			<td>
+				<label for="name ">Name </label>
+			</td>
+			<td>
+				<input type="text" name="studentName" id="studentName">
+			</td>
+
+
+		</tr>
+		<tr>
+			<td>
+				<label for="FatherName">FatherName </label>
+			</td>
+		    <td>
+				<input type="text" id="fatherName">
+			</td>
+		</tr>
+		<tr>
+			<td><label for="rollNumber">Roll Number</label></td>
+			<td>
+				<input type="text" id="rollNumber">
+			</td>
+			
+
+
+		</tr>
+		<tr>
+			<td colspan="2" align="center">  <label for="marks Detatails">Marks Details </label></td>
+		</tr>
+		<tr>
+			<th>Subject Name</th>
+			<th>Obtained Makrs</th>
+		  </tr>
+		  <tr>
+			<td>
+			  <input type="text" id="Sub1Name" value="Enter Name Of subject1 " />
+			</td>
+			<td><input type="number" id="sub1marks" /></td>
+		  </tr>
+		  <tr>
+			<td>
+			  
+			  <input type="text" id="Sub2Name" value="Enter Name Of subject2 " />
+			</td>
+			<td><input type="number" id="sub2marks" /></td>
+		  </tr>
+		  <tr>
+			<td>
+			  <label for=""></label>
+			  <input type="text" id="Sub3Name" value="Enter Name Of subject3 " />
+			</td>
+			<td><input type="number" id="sub3marks" /></td>
+		  </tr>
+		  <tr>
+			<td>
+				
+			  <input type="text" id="Sub4Name" value="Enter Name Of subject4 " />
+			</td>
+			<td><input type="number" id="sub4marks" /></td>
+		  </tr>
+		  <tr>
+			<td><button onclick="result()">Check Result</button></td>
+		  </tr>
+
+	</table>
+	<div style="display: flex; flex-direction:column; align-items:center;">
+	<table   class="marksSheet" id="marksSheet">
+		<tr>
+			<td>
+				<label for="name">Name    :</label>
+			</td>
+
+			<td>
+				<label for="studentName" id="StudentName"></label>
+			</td>
+			<td rowspan="3"> <img id="mg" src="qbo.png" alt="qurban" id="img" width=" 50px " height="60px"></td>
+		</tr>
+		<!-- father Info -->
+		<tr>
+			<td>
+				<input type="file" onchange="console.log(this.value)">
+			</td>
+		</tr>
+		<tr>
+
+			<td>
+				<label for="fatherName"> FatherName :</label>
+			</td>
+			<td>
+				<label for="fname" id="FatherName"></label>
+			</td>
+		</tr>
+		<!-- Roll Nmbr INFO -->
+		<tr>
+			<td>
+				<label for="rollNmuber"> Roll Number  :</label>
+			</td>
+			<td>
+				<label for="RollNm=umber" id="RollNumber"></label>
+			</td>
+		</tr>
+		<!-- Subjects Info -->
+		<tr>
+			<th>Subject Name</th>
+			<th>Obtained Makrs</th>
+		</tr>
+		<!-- Sub1 info -->
+
+
+
+		  <tr>
+
+			<td><label for="sub1 " id="sub1name"></label></td>
+			<td><label for="sub1 " id="sub1Marks"></label></td>
+		  </tr>
+		  <!-- sub2 info -->
+
+		  <tr>
+			
+			<td><label for="sub1 " id="sub2name"></label></td>
+			<td><label for="sub1 " id="sub2Marks"></label></td>
+		  </tr>
+		  <!-- Sub3 Info -->
+		 
+		  <tr>
+			<td>
+				<label for="sub1 " id="sub3name"></label>
+			 
+			</td>
+			
+			
+			<td><label for="sub1 " id="sub3Marks"></label></td>
+		  </tr>
+	       <!-- sub4 Info -->
+		  <tr>
+		  <td><label for="sub1 " id="sub4name"></label></td>
+		    <td><label for="sub1 " id="sub4Marks"></label></td4
+		</tr>
+		<tr>
+			<td> <label for="tMarks"> Total Marks</label></td>
+			<td> <label for="tMarks" id="tMarks"></label></td>
+		</tr>
+		<tr>
+			<td>
+				<label for="per" >Percentage </label>
+			</td>
+			<td> <label for="per" id="per"></label > </td>
+				
+		</tr>
+		<tr>
+			<td> <label for="grade"> Grade</label></td>
+			<td> <label for="grade" id="grade"></label></td>
+		</tr>
+	</table>
+	
+	</div>
+	<script>
+		function result(){
+			// Button Setting
+			let button = document.getElementById("marksSheet");
+	if (button.style.display === "none") {
+	  button.style.display = "inline";
+	} else {
+	  button.style.display = "none";
+	}
+	document.getElementById("mg").value= log(this.value) ;
+	
+			// Student Detials
+			let StudentName  = document.getElementById("studentName").value;
+			document.getElementById("StudentName").innerHTML= StudentName;
+			let FatherName = document.getElementById("fatherName").value ;
+			document.getElementById("FatherName").innerHTML= FatherName ;
+			let RollNumber = document.getElementById("rollNumber").value ;
+			document.getElementById("RollNumber").innerHTML=RollNumber;
+            // Subject Details 
+            let Sub1Name = document.getElementById("Sub1Name").value ;
+			document.getElementById("sub1name").innerHTML= Sub1Name ;
+
+			let Sub2Name = document.getElementById("Sub2Name").value ;
+			document.getElementById("sub2name").innerHTML= Sub2Name ;
+
+			let Sub3Name = document.getElementById("Sub3Name").value ;
+			document.getElementById("sub3name").innerHTML= Sub3Name ;
+
+			let Sub4Name = document.getElementById("Sub4Name").value ;
+			document.getElementById("sub4name").innerHTML= Sub4Name ;
+
+			
+ /// Marks Detials 
+			let sub1Marks = document.getElementById("sub1marks").value ;
+			document.getElementById("sub1Marks").innerHTML=sub1Marks;
+
+			let sub2Marks = document.getElementById("sub2marks").value ;
+			document.getElementById("sub2Marks").innerHTML=sub2Marks;
+
+			let sub3Marks = document.getElementById("sub3marks").value ;
+			document.getElementById("sub3Marks").innerHTML=sub3Marks;
+			let sub4Marks = document.getElementById("sub4marks").value ;
+			document.getElementById("sub4Marks").innerHTML=sub4Marks;
+
+
+
+			// Marking sub2marks
+			
+			let sub1marks = document.getElementById("sub1marks").value * 1;
+	let sub2marks = document.getElementById("sub2marks").value * 1;
+	let sub3marks = document.getElementById("sub3marks").value * 1;
+	let sub4marks = document.getElementById("sub4marks").value * 1;
+	obtainMarks = (sub1marks + sub2marks + sub3marks + sub4marks) ;
+	let percentag = (obtainMarks * 100) / 400;
+	// alert(percentag);
+	
+	// document.getElementById("grade").value = grade;
+
+	switch (true){
+		case percentag < 50  
+
+	//  sub1Marks < 50 &&  
+	//  sub2Marks < 50 &&
+	//  sub3Marks < 50 &&
+	//  sub4Marks < 50 
+	  :
+gradef ="Fail" ;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("grade").innerHTML = gradef;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("tMarks").innerHTML = obtainMarks;
+	  break ;
+case   percentag > 50 &&
+	  sub1marks < 50 ||
+	  sub2marks < 50 ||
+	  sub3marks < 50 ||
+	  sub4marks < 50
+	 :
+	
+	gradeF="Fail In any One " ;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("grade").innerHTML = gradeF;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("tMarks").innerHTML = obtainMarks;
+	  break ;
+
+case percentag > 80 :
+gradeA =" A+"
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("grade").innerHTML = gradeA;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("tMarks").innerHTML = obtainMarks;
+	  break ;
+	  case percentag > 70 :
+gradeA ="A" ;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("grade").innerHTML = gradeA;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("tMarks").innerHTML = obtainMarks;
+	  break ;
+	  case percentag > 65 :
+gradeA ="B" ;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("grade").innerHTML = gradeA;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("tMarks").innerHTML = obtainMarks;
+	  break ;
+	  case percentag > 50 :
+gradeA ="C" ;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("grade").innerHTML = gradeA;
+	  document.getElementById("per").innerHTML = percentag;
+	  document.getElementById("tMarks").innerHTML = obtainMarks;
+	  break ;
+	  
+	  
+	  
+	}
+
+		}
+	</script>
+	
+</body>
+</html>
